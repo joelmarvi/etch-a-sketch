@@ -1,13 +1,12 @@
-const grid = document.querySelector('.grid-container');
+const grid = document.getElementById('gridBox');
 
-function makeGrid(rows, cols) {
-    grid.style.setProperty('--grid-rows', rows); 
-    grid.style.setProperty('--grid-cols', cols);
-    for(i = 0; i < (rows * cols); i++) {
+function makeGrid(userInput) {
+    grid.style.setProperty('--gridDimension', userInput);
+    for(let i = 0; i < Math.pow(userInput, 2); i++) {
         let cell = document.createElement('div');
-        cell.innerText = (i + 1);
-        grid.appendChild(cell).className = 'grid-item';
-    };
-};
+        cell.classList.add('gridItem');
+        grid.appendChild(cell);
+    }
+}
 
-makeGrid(16, 16);
+makeGrid(16);
