@@ -1,5 +1,6 @@
 const grid = document.getElementById('gridBox');
 const dark = document.getElementById('dark');
+const newGrid = document.getElementById('new-grid');
 
 function makeGrid(userInput) {
     grid.style.setProperty('--gridDimension', userInput);
@@ -17,7 +18,12 @@ function darkColor(e) {
     }));
 }
 
-makeGrid(64);
+function resizeGrid(e) {
+    let userInput = 0;
+    userInput = prompt('How many rows and colums would you like?');
+    makeGrid(userInput);
+}
 
 dark.addEventListener('click', darkColor);
+newGrid.addEventListener('click', resizeGrid);
 
