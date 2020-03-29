@@ -1,4 +1,5 @@
 const grid = document.getElementById('gridBox');
+const dark = document.getElementById('dark');
 
 function makeGrid(userInput) {
     grid.style.setProperty('--gridDimension', userInput);
@@ -9,4 +10,14 @@ function makeGrid(userInput) {
     }
 }
 
-makeGrid(16);
+function darkColor(e) {
+    let cells = document.querySelectorAll('.gridItem');
+    cells.forEach(cell => cell.addEventListener('mouseover', function(e){
+        cell.style.backgroundColor = 'black';
+    }));
+}
+
+makeGrid(64);
+
+dark.addEventListener('click', darkColor);
+

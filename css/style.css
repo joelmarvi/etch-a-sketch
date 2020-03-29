@@ -3,10 +3,10 @@
 /* declaring global variables */
 :root {
     --font-color: #5f030f;
-    --highlight-color: #2e2b2b;
+    --hover-color: #2e2b2b;
     --start-color: #bdb7b7;
     --gridDimension: 1;
-    --mywidth: 70vw;
+    --mywidth: 70vw; /*vw = 1% of the viewport */
     --myheight: 35vw;
 }
 
@@ -40,7 +40,7 @@
 
 .btn {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     height: 25px;
 }
 
@@ -62,4 +62,6 @@ button {
 .gridItem {
     border: 1px solid black;
     display: inline-block;
+    background-color: var(--start-color);
 }
+
