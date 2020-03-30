@@ -3,6 +3,7 @@ const dark = document.getElementById('dark');
 const newGrid = document.getElementById('new-grid');
 const clear = document.getElementById('clear');
 const color = document.getElementById('color');
+const userInput = prompt('How many rows and columns would you like?');
 
 function makeGrid(userInput) {
     grid.style.setProperty('--gridDimension', userInput);
@@ -21,6 +22,9 @@ function darkColor(e) {
 }
 
 function resizeGrid(e) {
+    while(grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
     let userInput = 0;
     userInput = prompt('How many rows and colums would you like?');
     makeGrid(userInput);
@@ -47,6 +51,7 @@ function randomColor(e) {
     }));
 }
 
+makeGrid(userInput);
 dark.addEventListener('click', darkColor);
 newGrid.addEventListener('click', resizeGrid);
 clear.addEventListener('click', clearGrid);
