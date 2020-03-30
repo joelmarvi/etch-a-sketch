@@ -47,6 +47,7 @@
 button {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
+    cursor: pointer;
 }
 
 #grid-box {
@@ -63,6 +64,7 @@ button {
     border: 1px solid black;
     display: inline-block;
     background-color: var(--start-color);
+    cursor: pointer;
 }
 
 
