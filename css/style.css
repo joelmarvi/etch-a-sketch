@@ -5,9 +5,9 @@
     --font-color: #5f030f;
     --hover-color: #2e2b2b;
     --start-color: #bdb7b7;
-    --gridDimension: 1;
-    --mywidth: 70vw; /*vw = 1% of the viewport */
-    --myheight: 35vw;
+    --grid-dimension: 1;
+    --my-width: 70vw; /*vw = 1% of the viewport */
+    --my-height: 35vw;
 }
 
 /* simple reset */
@@ -49,17 +49,17 @@ button {
     font-family: 'Roboto', sans-serif;
 }
 
-#gridBox {
+#grid-box {
     display: grid;
-    grid-template-columns: repeat(var(--gridDimension), 1fr);
-    grid-template-rows: repeat(var(--gridDimension), 1fr);
-    width: var(--mywidth);
-    height: var(--myheight);
+    grid-template-columns: repeat(var(--grid-dimension), 1fr);
+    grid-template-rows: repeat(var(--grid-dimension), 1fr);
+    width: var(--my-width);
+    height: var(--my-height);
     border: 2px solid black;
     margin: auto;
 }
 
-.gridItem {
+.grid-item {
     border: 1px solid black;
     display: inline-block;
     background-color: var(--start-color);
