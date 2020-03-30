@@ -2,6 +2,7 @@ const grid = document.getElementById('gridBox');
 const dark = document.getElementById('dark');
 const newGrid = document.getElementById('new-grid');
 const clear = document.getElementById('clear');
+const color = document.getElementById('color');
 
 function makeGrid(userInput) {
     grid.style.setProperty('--gridDimension', userInput);
@@ -30,7 +31,24 @@ function clearGrid(e) {
     cells.forEach(cell => cell.style.backgroundColor = 'var(--start-color)');
 }
 
+function getRandomColor() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for(let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function randomColor(e) {
+    let cells = document.querySelectorAll('.gridItem');
+    cells.forEach(cell => cell.addEventListener('mouseover', function(e){
+        cell.style.backgroundColor = getRandomColor();
+    }));
+}
+
 dark.addEventListener('click', darkColor);
 newGrid.addEventListener('click', resizeGrid);
 clear.addEventListener('click', clearGrid);
+color.addEventListener('click', randomColor);
 
